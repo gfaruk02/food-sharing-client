@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../Components/Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
+    // const [success, setSuccess] = useState()
+    const {signUpUser} = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const handleRegister = e => {
       e.preventDefault();
@@ -14,9 +20,52 @@ const Register = () => {
       const photo = form.photo.value;
       const password = form.password.value;
       console.log(name, email, photo, password);
+
+      // setSuccess('')
+      if(!/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}$/.test(password)) {
+        // setRegisterError('Password Minimum 6 characters, at least one uppercase letter, one number and one special character:');
+        Swal.fire({
+          title: 'Error!',
+          text: 'Password Minimum 6 characters, at least one uppercase letter, one number and one special character:',
+          icon: 'error',
+          confirmButtonText: 'Cool'
+        })
+      }
+      else{
+        signUpUser(email, password)
+        .then(result=>{
+            console.log(result);
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'CONGRATULATIONS! You have now successfully registered! ',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              //update user name and photo url
+              updateProfile(result.user, {
+                displayName: name,
+                photoURL: photo,
+              })
+              e.target.reset();
+              navigate('/');
+
+        })
+        .catch(error=>{
+            console.log(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'The email address is already in use. Please use a different email address',
+              })
+        })
+      }
     }
     return (
         <div className="hero min-h-screen bg-base-200">
+            {/* {
+                success && <p> {success} </p>
+            } */}
           <div className="hero-content flex-col md:flex-row">
             <div className='w-full ml-8'>
             <img src="https://i.ibb.co/xgz0HsN/food-sharing.png" alt="" />

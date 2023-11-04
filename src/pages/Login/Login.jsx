@@ -1,12 +1,15 @@
 // import 'daisyui';
 import { Link } from 'react-router-dom';
 import img from '../../assets/login.svg'
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { AuthContext } from '../../Components/Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const {signInUser, gooleSignIn} = useContext(AuthContext);
 
   const handleLogin = e => {
     e.preventDefault();
@@ -14,7 +17,8 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
-  }
+
+
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col md:flex-row">
