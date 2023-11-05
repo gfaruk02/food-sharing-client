@@ -7,8 +7,8 @@ const Donate = () => {
 				<div className="bg-gradient-to-r from-gray-400 h-full">
 
 					<div className="px-10 lg:px-56 py-20 text-gray-950">
-						<h1 className="text-5xl antialiased font-bold leadi text-center ">Become a Food Sharing Monthly Sustainer Donor!</h1>
-						<p className="pt-8 pb-8 text-xl antialiased text-center font-semibold">For as little as $10 a month you can become a Food First Sustainer Donor! Doing so will help ensure Food First has the resources needed to plan ahead and accomplish even more in support of farmers, farmworkers, grassroots organizers, and activist researchers.  And your gift is also tax-deductible! Become a Food First Sustainer Donor today!</p>
+						<h1 className="text-3xl md:text-5xl antialiased font-bold leadi text-center ">Become a Food Sharing Monthly Sustainer Donor!</h1>
+						<p className="pt-8 pb-8 text-base md:text-xl antialiased text-center font-semibold">For as little as $10 a month you can become a Food First Sustainer Donor! Doing so will help ensure Food First has the resources needed to plan ahead and accomplish even more in support of farmers, farmworkers, grassroots organizers, and activist researchers.  And your gift is also tax-deductible! Become a Food First Sustainer Donor today!</p>
 					</div>
 				</div>
 			</div>
@@ -18,7 +18,7 @@ const Donate = () => {
 					<div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
 						<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 bg-gray-900">
 							<span className="block mb-2 text-violet-400">Monthly Donation</span>
-							<h1 className="text-5xl font-extrabold text-gray-50">Build it with Food Sharing</h1>
+							<h1 className="text-4xl font-extrabold text-gray-50">Build it with Food Sharing</h1>
 							<p className="my-8">
 								<span className="font-medium text-gray-50">We invite you to join Food Sharing </span>and fight alongside us as we redistribute resources and power to end hunger.
 							</p>
@@ -32,8 +32,8 @@ const Donate = () => {
 									<input id="lastname" type="text" placeholder="Email address" className="w-full py-2 rounded-md focus:ring focus:ri border-gray-700" />
 								</div>
 								<div>
-									<label className="text-sm sr-only">Donate Food Name</label>
-									<input id="lastname" type="text" placeholder="Donate Food Name" className="w-full py-2 rounded-md focus:ring focus:ri border-gray-700 text-black" />
+									<label className="text-sm sr-only">Donate Amount</label>
+									<input id="lastname" type="text" placeholder="Donate Amount" className="w-full py-2 rounded-md focus:ring focus:ri border-gray-700 text-black" />
 								</div>
 								<div>
 									<label className="text-sm sr-only">Your Location</label>

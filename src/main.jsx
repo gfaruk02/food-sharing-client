@@ -13,6 +13,7 @@ import AuthProvider from './Components/Provider/AuthProvider';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import ShowAllFoods from './pages/ShowAllFoods/ShowAllFoods';
 import Donate from './pages/Donate/Donate';
+import PrivateRoute from './Components/Routes/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/donate',
-        element: <Donate></Donate>
+        element: <PrivateRoute><Donate></Donate></PrivateRoute>
       },
       {
         path: '/login',
