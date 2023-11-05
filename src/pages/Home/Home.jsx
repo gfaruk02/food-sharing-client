@@ -13,7 +13,7 @@ const Home = () => {
                 <h1 className="text-center text-5xl py-8 font-extrabold">Featured Foods</h1>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5">
                     {
-                        showDisplayFoods.map(food => <FeaturedFoods key={food._id} food={food}></FeaturedFoods>)
+                        showDisplayFoods?.map(food => <FeaturedFoods key={food._id} food={food}></FeaturedFoods>)
                     }
                 </div>
                 <div className="text-center my-5">
