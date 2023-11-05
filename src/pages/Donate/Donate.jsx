@@ -3,11 +3,11 @@ const Donate = () => {
     return (
         <div>
             <div>
-                <h1 className="text-5xl font-bold text-center py-8">One-Time Gift</h1>
+                <h1 className="text-5xl font-bold text-center py-8">Monthly Donation</h1>
                 <section className="p-6 bg-gray-800 text-gray-100">
 	<div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
 		<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 bg-gray-900">
-			<span className="block mb-2 text-violet-400">One-Time Gift</span>
+			<span className="block mb-2 text-violet-400">Monthly Donation</span>
 			<h1 className="text-5xl font-extrabold text-gray-50">Build it with Food Sharing</h1>
 			<p className="my-8">
 				<span className="font-medium text-gray-50">We invite you to join Food Sharing </span>and fight alongside us as we redistribute resources and power to end hunger. 
