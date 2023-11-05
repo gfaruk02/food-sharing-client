@@ -1,20 +1,20 @@
-import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import { AuthContext } from '../../Components/Provider/AuthProvider';
 
-const ShowAllCards = ({ showFood }) => {
-    const { user } = useContext(AuthContext)
-    const { food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = showFood
+// import { useContext } from 'react';
+// import { AuthContext } from '../../Components/Provider/AuthProvider';
+
+const ShowAllCards = ({ food }) => {
+    // const { user } = useContext(AuthContext)
+    const { food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food
     return (
         <div>
             <div className="max-w-md rounded-md shadow-md bg-gray-900 text-gray-100">
                 <img src={food_image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
                 <div className="flex flex-col justify-between p-4 space-y-6">
                     <div className="space-y-2">
-                        <div className='flex gap-2 items-center'>
+                        {/* <div className='flex gap-2 items-center'>
                             <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
                             <p>{user.displayName}</p>
-                        </div>
+                        </div> */}
                         <h2 className="text-xl font-semibold tracki">Name : {food_name}</h2>
                         <div className='text-base'>
                             <p className="text-gray-100">Quantity: {food_quantity}</p>
@@ -33,6 +33,3 @@ const ShowAllCards = ({ showFood }) => {
 };
 
 export default ShowAllCards;
-ShowAllCards.propTypes = {
-    showFood: PropTypes.node
-}

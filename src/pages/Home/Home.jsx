@@ -1,9 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FeaturedFoods from "../../Components/FeaturedFoods/FeaturedFoods";
+import useFoods from "../../Hooks/useFoods";
 
 const Home = () => {
-    const loadFoods = useLoaderData()
-    const showDisplayFoods = loadFoods.slice(0, 6)
+    // const loadFoods = useLoaderData()
+    const foods = useFoods();
+    const showDisplayFoods = foods.slice(0, 6)
     console.log(showDisplayFoods._id);
 
     // console.log(loadFoods);
