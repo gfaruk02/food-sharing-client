@@ -41,6 +41,21 @@ const Navbar = () => {
        Available Foods
       </NavLink>
     </li>
+{  user &&  <li className=" font-semibold text-base">
+      <NavLink
+        to="/donate"
+        style={({ isActive, isPending, isTransitioning }) => {
+          return {
+            fontWeight: isActive ? "bold" : "bold",
+            color: isPending ? "white" : "",
+            backgroundColor: isActive ? "green" : "",
+            viewTransitionName: isTransitioning ? "slide" : "",
+          };
+        }}
+      >
+        Donate
+      </NavLink>
+    </li>}
     <li className=" font-semibold text-base">
       <NavLink
         to="/login"

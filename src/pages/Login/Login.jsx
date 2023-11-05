@@ -1,5 +1,5 @@
 // import 'daisyui';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.svg'
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -12,6 +12,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const { signInUser, gooleSignIn } = useContext(AuthContext);
   const navigate = useNavigate()
+  const location = useLocation()
 
   const handleLogin = e => {
     e.preventDefault();
@@ -35,7 +36,7 @@ const Login = () => {
 
 
         e.target.reset();
-        navigate('/')
+        navigate(location?.state?location.state : "/");
       })
       .catch(error => {
         console.log(error);
@@ -51,7 +52,7 @@ const Login = () => {
     gooleSignIn()
       .then(result => {
         console.log(result);
-        navigate('/')
+        navigate(location?.state?location.state : "/");
       })
       .catch(error => {
         console.log(error);

@@ -12,6 +12,7 @@ import Register from './pages/Register/Register';
 import AuthProvider from './Components/Provider/AuthProvider';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import ShowAllFoods from './pages/ShowAllFoods/ShowAllFoods';
+import Donate from './pages/Donate/Donate';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         path:'/showallfoods',
         element:<ShowAllFoods></ShowAllFoods>,
         loader: ()=> fetch('http://localhost:5000/foods')
+      },
+      {
+        path: '/donate',
+        element: <Donate></Donate>
       },
       {
         path: '/login',

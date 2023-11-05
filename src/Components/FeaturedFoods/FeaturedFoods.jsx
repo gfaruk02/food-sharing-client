@@ -12,8 +12,8 @@ const FeaturedFoods = ({ food }) => {
 				<div className="flex flex-col justify-between p-4 space-y-6">
 					<div className="space-y-2">
 						<div className='flex gap-2 items-center'>
-							<img className='w-10 h-10 rounded-full' src={user.photoURL} alt="" />
-							<p>{user.displayName}</p>
+							<img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
+							<p>{user?.displayName}</p>
 						</div>
 						<h2 className="text-xl font-semibold tracki">Name : {food_name}</h2>
 						<div className='text-base'>
