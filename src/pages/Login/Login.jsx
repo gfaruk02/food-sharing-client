@@ -1,5 +1,5 @@
 // import 'daisyui';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/login.svg'
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -9,7 +9,8 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
-  const {signInUser, gooleSignIn} = useContext(AuthContext);
+  const { signInUser, gooleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleLogin = e => {
     e.preventDefault();
@@ -18,6 +19,37 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
 
+    signInUser(email, password)
+      .then(result => {
+        console.log(result);
+        e.target.reset();
+        navigate('/')
+      })
+      .catch(error => {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Your email and password do not match. Please try again',
+        })
+      })
+
+  }
+  const handleGoolgeLogin = () => {
+    gooleSignIn()
+      .then(result => {
+        console.log(result);
+        navigate('/')
+      })
+      .catch(error => {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Your email and password do not match. Please try again',
+        })
+      })
+  }
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -53,6 +85,12 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          <div>
+            <button className='text-base pl-9 mb-3 ' onClick={handleGoolgeLogin}>
+              Google Login
+            </button>
+
+          </div>
           <div className='text-base pl-9 mb-5 '>
             <p>Do not Have an Account? Please <Link to='/register' className='text-green-700 font-bold'> Sign Up</Link></p>
           </div>
