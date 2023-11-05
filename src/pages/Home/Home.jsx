@@ -1,10 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import FeaturedFoods from "../../Components/FeaturedFoods/FeaturedFoods";
 
-
 const Home = () => {
     const loadFoods = useLoaderData()
     const showDisplayFoods = loadFoods.slice(0, 6)
+    console.log(showDisplayFoods._id);
+
     console.log(loadFoods);
     return (
         <div>
@@ -16,7 +17,7 @@ const Home = () => {
                     }
                 </div>
                 <div className="text-center my-5">
-                    <Link to='/showAllFoods'> 
+                    <Link to='/showallfoods'> 
                     <button className="text-white font-bold text-2xl hover:bg-green-400 bg-green-800 py-4 px-8 rounded-lg"> Show All Foods </button>
                     </Link>
                 </div>
