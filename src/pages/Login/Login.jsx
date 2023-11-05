@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../../Components/Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -21,7 +22,18 @@ const Login = () => {
 
     signInUser(email, password)
       .then(result => {
-        console.log(result);
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        const user = {email};
+        axios.post('http://localhost:5000/jwt', user, {
+          withCredentials:true})
+          .then(res=>{
+            console.log(res.data);
+          })
+
+
+
+
         e.target.reset();
         navigate('/')
       })
