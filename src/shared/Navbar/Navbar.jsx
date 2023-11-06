@@ -41,7 +41,25 @@ const Navbar = () => {
        Available Foods
       </NavLink>
     </li>
-{  user &&  <li className=" font-semibold text-base">
+{  user && <>
+    
+  <li className=" font-semibold text-base">
+      <NavLink
+        to="/addfood"
+        style={({ isActive, isPending, isTransitioning }) => {
+          return {
+            fontWeight: isActive ? "bold" : "bold",
+            color: isPending ? "white" : "",
+            backgroundColor: isActive ? "green" : "",
+            viewTransitionName: isTransitioning ? "slide" : "",
+          };
+        }}
+      >
+        Add Food
+      </NavLink>
+    </li>
+    
+  <li className=" font-semibold text-base">
       <NavLink
         to="/donate"
         style={({ isActive, isPending, isTransitioning }) => {
@@ -55,7 +73,12 @@ const Navbar = () => {
       >
         Donate
       </NavLink>
-    </li>}
+    </li>
+
+    
+ </>
+    
+    }
     <li className=" font-semibold text-base">
       <NavLink
         to="/login"

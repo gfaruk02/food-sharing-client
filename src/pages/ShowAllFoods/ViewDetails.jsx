@@ -19,6 +19,8 @@ const ViewDetails = () => {
     const {donator_name, donator_email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food;
     const d = new Date()
     let time = d.toLocaleDateString();
+
+    
     const handleFoodReguest=(e)=>{
         e.preventDefault();
         const form = e.target;

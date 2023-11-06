@@ -23,7 +23,7 @@ const ShowAllCards = ({ food }) => {
                             <p className="text-gray-100">Pickup Location: {pickup_location}</p>
                             <p className="text-gray-100"> Expired Date: {expired_datetime}</p>
                             <p className="text-gray-100"> Notes: {
-                                additional_notes.length > 45 ? <span>{additional_notes.slice(0, 45)}</span> : <span>{additional_notes}</span>
+                                additional_notes?.length > 45 ? <span>{additional_notes.slice(0, 45)}</span> : <span>{additional_notes}</span>
                             }</p>
                         </div>
                     </div>
