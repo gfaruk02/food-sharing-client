@@ -1,5 +1,8 @@
 [
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/K2K8Z3B/f1.jpg",
         "food_name": "Pasta Carbonara with Roast",
         "food_quantity": 8,
@@ -8,6 +11,9 @@
         "additional_notes": "No nuts, suitable for vegans."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/NrDKF5d/f2.jpg",
         "food_name": "Creamy Coconut Chicken Curry",
         "food_quantity": 12,
@@ -16,6 +22,9 @@
         "additional_notes": "Contains dairy, not suitable for vegetarians."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/30xCWRg/f3.jpg",
         "food_name": "Beef Broth Vegetable Soup",
         "food_quantity": 15,
@@ -24,6 +33,9 @@
         "additional_notes": "Gluten-free, suitable for vegetarians."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/G79BmzC/f4.jpg",
         "food_name": "Baked Salmon",
         "food_quantity": 6,
@@ -32,6 +44,9 @@
         "additional_notes": "Contains fish, not suitable for those with seafood allergies."
     },
     {
+        "donator_name": "Shadia Sultan",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "shadia@gmail.com",
         "food_image": "https://i.ibb.co/KrkxpcZ/f5.jpg",
         "food_name": "Easy Fruit Salad",
         "food_quantity": 20,
@@ -40,6 +55,9 @@
         "additional_notes": "Vegan-friendly, no added sugar."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/j4dxf0V/f6.jpg",
         "food_name": "Beef Stew with Carrots ",
         "food_quantity": 10,
@@ -48,6 +66,9 @@
         "additional_notes": "Contains meat and vegetables."
     },
     {
+        "donator_name": "Shadia Sultana",
+        "donator_image": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "donator_email": "shadia@gmail.com",
         "food_image": "https://i.ibb.co/gtmJ1pW/f7.jpg",
         "food_name": "Classic Cheese Pizza",
         "food_quantity": 8,
@@ -56,6 +77,9 @@
         "additional_notes": "Contains dairy and gluten, not suitable for vegans."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/cLp37qb/f8.jpg",
         "food_name": "Chocolate Cake",
         "food_quantity": 12,
@@ -64,6 +88,9 @@
         "additional_notes": "Not suitable for those with chocolate allergies."
     },
     {
+        "donator_name": "Shadia Sultana",
+        "donator_image": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "donator_email": "shadia@gmail.com",
         "food_image": "https://i.ibb.co/WPWdYNY/f9.jpg",
         "food_name": "Mushroom Risotto",
         "food_quantity": 14,
@@ -72,6 +99,9 @@
         "additional_notes": "Vegetarian-friendly, no meat included."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/RDxF9Gq/10.jpg",
         "food_name": "Fried Chicken",
         "food_quantity": 10,
@@ -80,6 +110,9 @@
         "additional_notes": "Contains meat and gluten."
     },
     {
+        "donator_name": "Shadia Sultana",
+        "donator_image": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "donator_email": "shadia@gmail.com",
         "food_image": "https://i.ibb.co/GxM8dWW/f11.jpg",
         "food_name": "Eggplant Parmesan",
         "food_quantity": 10,
@@ -88,6 +121,9 @@
         "additional_notes": "Vegetarian-friendly, no meat included."
     },
     {
+        "donator_name": "Humaira Faiza",
+        "donator_image": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "donator_email": "faiza@gmail.com",
         "food_image": "https://i.ibb.co/cx2m4t2/f12.jpg",
         "food_name": "Green vegetable lasagne",
         "food_quantity": 14,

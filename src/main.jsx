@@ -14,6 +14,7 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import ShowAllFoods from './pages/ShowAllFoods/ShowAllFoods';
 import Donate from './pages/Donate/Donate';
 import PrivateRoute from './Components/Routes/PrivateRoute';
+import ViewDetails from './pages/ShowAllFoods/ViewDetails';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
         path:'/showallfoods',
         element:<ShowAllFoods></ShowAllFoods>,
         // loader: ()=> fetch('http://localhost:5000/foods')
+      },
+      {
+        path:"/viewDetails/:_id",
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        loader: ()=> fetch('http://localhost:5000/foods')
       },
       {
         path: '/donate',

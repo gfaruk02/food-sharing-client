@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import { AuthContext } from '../Provider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 const FeaturedFoods = ({ food }) => {
-	const { user } = useContext(AuthContext);
-	const { food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food
+	const {_id, donator_name, donator_image, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food
 	return (
 		<div>
 			<div className="max-w-md rounded-md shadow-md bg-gray-900 text-gray-100">
@@ -12,8 +10,8 @@ const FeaturedFoods = ({ food }) => {
 				<div className="flex flex-col justify-between p-4 space-y-6">
 					<div className="space-y-2">
 						<div className='flex gap-2 items-center'>
-							<img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" />
-							<p>{user?.displayName}</p>
+							<img className='w-10 h-10 rounded-full' src={donator_image} alt="" />
+							<p>{donator_name}</p>
 						</div>
 						<h2 className="text-xl font-semibold tracki">Name : {food_name}</h2>
 						<div className='text-base'>
@@ -25,7 +23,9 @@ const FeaturedFoods = ({ food }) => {
 							}</p>
 						</div>
 					</div>
+					<Link to={`/viewDetails/${_id}`}>
 					<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md bg-violet-400 text-gray-900">View Detail</button>
+					</Link>
 				</div>
 			</div>
 		</div>
