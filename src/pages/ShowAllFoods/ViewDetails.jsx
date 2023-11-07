@@ -3,6 +3,7 @@ import { Navigate, useLoaderData, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 
 const ViewDetails = () => {
     // const allFoods = useFoods();
@@ -16,7 +17,7 @@ const ViewDetails = () => {
         setFood(foodItem);
     }, [_id, allFoods])
     console.log(food);
-    const {donator_name, donator_email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food;
+    const {donator_name, email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes, status } = food;
     const d = new Date()
     let time = d.toLocaleDateString();
 
@@ -28,15 +29,19 @@ const ViewDetails = () => {
         const additional_notes = form.additional_notes.value;
         const money = form.money.value;
 
-        const foodRequest = { id: _id, 
+        const foodRequest = { 
+            requistId: _id,
             name:food_name, 
             photo: food_image,
-            donatorEmail:donator_email,
+            donatorEmail:email,
             donatorName: donator_name,
-            userEmail: user.email,
+            email: user.email,
+            userName: user.displayName,
+            userImage: user.photoURL,
             location: pickup_location,
             expired_datetime: expired_datetime,
             additional_notes,
+            status:status,
             money,
             time
 
@@ -75,12 +80,16 @@ const ViewDetails = () => {
     return (
         <div className="mt-10">
             <section className="py-6 bg-gray-500 text-gray-50">
-                <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-10 px-10">
+            <motion.div
+  animate={{ x: 100 }}
+  transition={{ ease: "easeOut", duration: 2 }} className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-10 px-10">
                     <p>Donator Name: {donator_name}</p>
                     <p>Food Pickup Location: {pickup_location}</p>
-                </div>
+                </motion.div>
                 <div className="container mx-auto flex flex-col items-center justify-center max-w-lg p-4 lg:max-w-full lg:flex-row">
-                    <div className="flex flex-col space-y-3 flex-1 p-4 pb-8 sm:p-8 lg:p-16 bg-gray-900 rounded-l-lg">
+                    <motion.div
+  animate={{ x: 10 }}
+  transition={{ ease: "easeOut", duration:1 }} className="flex flex-col space-y-3 flex-1 p-4 pb-8 sm:p-8 lg:p-16 bg-gray-900 rounded-l-lg">
                         <h1 className="text-2xl font-bold text-left"> Food Name: {food_name}</h1>
                         <p className="text-xl font-bold text-left">Food Quantity: {food_quantity}</p>
                         <p className="text-xl font-bold text-left">Expired Date: {expired_datetime}</p>
@@ -102,11 +111,11 @@ const ViewDetails = () => {
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32">Food Id:</span>
-                                        <input type="text" name="id" value={_id} className="input input-bordered flex-1" disabled />
+                                        <input value={_id} name="requistId" className="input input-bordered flex-1" disabled />
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32"> Donator Email :</span>
-                                        <input type="text" name="donatorEmail" value={donator_email} className="input input-bordered flex-1" disabled />
+                                        <input type="text" name="donatorEmail" value={email} className="input input-bordered flex-1" disabled />
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32"> Donator Name:</span>
@@ -114,7 +123,19 @@ const ViewDetails = () => {
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32">User email:</span>
-                                        <input type="email" name="userEmail" value={user.email} className="input input-bordered flex-1" disabled />
+                                        <input type="email" name="email" value={user.email} className="input input-bordered flex-1" disabled />
+                                    </div>
+                                    <div className="text-base font-semibold flex items-center">
+                                        <span className="mr-1 w-32">User Name:</span>
+                                        <input type="text" name="userName" value={user.displayName} className="input input-bordered flex-1" disabled />
+                                    </div>
+                                    <div className="text-base font-semibold flex items-center">
+                                        <span className="mr-1 w-32">User Photo:</span>
+                                        <input type="text" name=" userImage" value={user.photoURL} className="input input-bordered flex-1" disabled />
+                                    </div>
+                                    <div className="text-base font-semibold flex items-center">
+                                        <span className="mr-1 w-32">Status:</span>
+                                        <input type="text" name=" status" value={status} className="input input-bordered flex-1" disabled />
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32">Request Date:</span>
@@ -148,7 +169,7 @@ const ViewDetails = () => {
                                 </div>
                             </div>
                         </dialog>
-                    </div>
+                    </motion.div>
                     <div className="flex-1 w-full rounded-md bg-violet-400 text-gray-900 ">
                         <img className="w-full rounded-r-lg" src={food_image} alt="" />
                     </div>

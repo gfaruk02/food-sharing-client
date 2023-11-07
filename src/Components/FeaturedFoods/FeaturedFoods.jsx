@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 const FeaturedFoods = ({ food }) => {
 	const {_id, donator_name, donator_image, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes } = food
 	return (
 		<div>
-			<div className="max-w-md rounded-md shadow-md bg-gray-900 text-gray-100">
+			<motion.div whileHover={{ scale: 1.1 }} className="max-w-md rounded-md shadow-md bg-gray-900 text-gray-100">
 				<img src={food_image} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
 				<div className="flex flex-col justify-between p-4 space-y-6">
 					<div className="space-y-2">
@@ -27,7 +28,7 @@ const FeaturedFoods = ({ food }) => {
 					<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md bg-violet-400 text-gray-900">View Detail</button>
 					</Link>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };

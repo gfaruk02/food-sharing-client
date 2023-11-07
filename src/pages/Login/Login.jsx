@@ -5,13 +5,13 @@ import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../../Components/Provider/AuthProvider';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
   const { signInUser, gooleSignIn } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const Navigate = useNavigate()
   const location = useLocation()
 
   const handleLogin = e => {
@@ -25,18 +25,22 @@ const Login = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        const user = {email};
-        axios.post('http://localhost:5000/jwt', user, {
-          withCredentials:true})
-          .then(res=>{
-            console.log(res.data);
-          })
+        // const user = {email};
+        // form.reset();
+        // axios.post('http://localhost:5000/jwt', user, {
+        //   withCredentials:true})
+        //   .then(res => {
+        //     console.log(res.data);
+        //     if (res.data.success) {
 
+        //       Navigate(location?.state ? location.state : '/');
+        //     }
+        //   })
 
 
 
         e.target.reset();
-        navigate(location?.state?location.state : "/");
+        Navigate(location?.state?location.state : "/");
       })
       .catch(error => {
         console.log(error);
@@ -52,7 +56,7 @@ const Login = () => {
     gooleSignIn()
       .then(result => {
         console.log(result);
-        navigate(location?.state?location.state : "/");
+        Navigate(location?.state?location.state : "/");
       })
       .catch(error => {
         console.log(error);

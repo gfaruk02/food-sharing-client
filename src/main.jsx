@@ -16,6 +16,11 @@ import Donate from './pages/Donate/Donate';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import ViewDetails from './pages/ShowAllFoods/ViewDetails';
 import AddFood from './pages/AddFood/AddFood';
+import Table from './Components/Table/Table';
+import ManageFood from './pages/ManageFood/ManageFood';
+import UpdateFood from './pages/ManageFood/UpdateFood';
+import ManageSingleFood from './pages/ManageSingleFood/ManageSingleFood';
+import MyFoodRequest from './pages/MyFoodRequest/MyFoodRequest';
 
 
 const router = createBrowserRouter([
@@ -44,6 +49,24 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <AddFood></AddFood> </PrivateRoute>
       },
       {
+        path: '/managefood',
+        element: <PrivateRoute> <ManageFood></ManageFood> </PrivateRoute>
+      },
+      {
+        path: '/updatefood/:id',
+        element: <PrivateRoute> <UpdateFood></UpdateFood> </PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+      },
+      {
+        path: '/managesinglefoods/:id',
+        element: <PrivateRoute> <ManageSingleFood></ManageSingleFood> </PrivateRoute>,
+        loader: ({ params })=> fetch(`http://localhost:5000/foodRequests/${params.id}`)
+      },
+      {
+        path: '/myfoodrequest',
+        element: <PrivateRoute> <MyFoodRequest></MyFoodRequest> </PrivateRoute>
+      },
+      {
         path: '/donate',
         element: <PrivateRoute><Donate></Donate></PrivateRoute>
       },
@@ -54,6 +77,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/table',
+        element: <Table></Table>
       },
     ]
   },

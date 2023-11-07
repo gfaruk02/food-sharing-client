@@ -4,9 +4,9 @@ import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 
 const Navbar = () => {
-  const { user, signOutUser } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const handlesignOut =()=>{
-    signOutUser()
+    logOut()
       .then(()=> console.log('User LogOut Success'))
       .catch(error=> console.error(error))
   }
@@ -56,6 +56,37 @@ const Navbar = () => {
         }}
       >
         Add Food
+      </NavLink>
+    </li>
+    
+  <li className=" font-semibold text-base">
+      <NavLink
+        to="/managefood"
+        style={({ isActive, isPending, isTransitioning }) => {
+          return {
+            fontWeight: isActive ? "bold" : "bold",
+            color: isPending ? "white" : "",
+            backgroundColor: isActive ? "green" : "",
+            viewTransitionName: isTransitioning ? "slide" : "",
+          };
+        }}
+      >
+        Manage Food
+      </NavLink>
+    </li>
+  <li className=" font-semibold text-base">
+      <NavLink
+        to="/myfoodrequest"
+        style={({ isActive, isPending, isTransitioning }) => {
+          return {
+            fontWeight: isActive ? "bold" : "bold",
+            color: isPending ? "white" : "",
+            backgroundColor: isActive ? "green" : "",
+            viewTransitionName: isTransitioning ? "slide" : "",
+          };
+        }}
+      >
+       My Food Request
       </NavLink>
     </li>
     

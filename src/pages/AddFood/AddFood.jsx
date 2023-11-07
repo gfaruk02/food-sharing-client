@@ -17,7 +17,7 @@ const AddFood = () => {
         const status = form.status.value;
 
 
-        const addFoodInfo = {food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, status ,   donator_name: user.displayName,   donator_email: user.email,  donator_image: user.photoURL }
+        const addFoodInfo = {food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, status ,   donator_name: user.displayName,   email: user.email,  donator_image: user.photoURL }
         console.log(addFoodInfo);
         if (user) {
             fetch('http://localhost:5000/foods', {
@@ -38,6 +38,7 @@ const AddFood = () => {
                             confirmButtonText: 'Ok',
 
                         })
+                        form.reset();
                     }
                 })
                 

@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import app from "../Firebase/Firebase.config";
+import axios from "axios";
 
 const auth = getAuth(app)
 const provider = new GoogleAuthProvider();
@@ -25,15 +26,34 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return signInWithPopup(auth, provider)
     }
-    const signOutUser=()=>{
+    // const logOut=()=>{
+    //     setLoading(true);
+    //     return signOut(auth)
+    // }
+    const logOut = () => {
         setLoading(true);
-        return signOut(auth)
+        return signOut(auth);
     }
     useEffect(()=>{
         const unSubscribe =onAuthStateChanged(auth, (currentUser)=>{
-            console.log('manage currenUser', currentUser);
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = {email: userEmail}
             setUser(currentUser);
-            setLoading(false)
+            console.log('current user', currentUser);
+            setLoading(false);
+            if(currentUser){
+                
+                axios.post('http://localhost:5000/jwt',loggedUser, {withCredentials: true})
+                .then(res=>{
+                    console.log('token res',res.data);
+                })
+            }
+            else{
+                axios.post('http://localhost:5000/logout',loggedUser, {withCredentials: true})
+                .then(res=>{
+                    console.log('token response', res.data);
+                })
+            }
         })
         return ()=>{
          return unSubscribe();
@@ -49,7 +69,7 @@ const AuthProvider = ({children}) => {
         signUpUser,
         signInUser,
         gooleSignIn,
-        signOutUser
+        logOut
     }
     return (
         <AuthContext.Provider value={authValues}>

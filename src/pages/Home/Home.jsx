@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import FeaturedFoods from "../../Components/FeaturedFoods/FeaturedFoods";
 import useFoods from "../../Hooks/useFoods";
+import Banner from "./Banner";
+// import { motion } from "framer-motion";
 
 const Home = () => {
     // const loadFoods = useLoaderData()
@@ -11,7 +13,8 @@ const Home = () => {
     // console.log(loadFoods);
     return (
         <div>
-            <div>
+            <Banner></Banner>
+            <div >
                 <h1 className="text-center text-5xl py-8 font-extrabold">Featured Foods</h1>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5">
                     {
