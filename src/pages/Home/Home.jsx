@@ -7,7 +7,8 @@ import Banner from "./Banner";
 const Home = () => {
     // const loadFoods = useLoaderData()
     const foods = useFoods();
-    const showDisplayFoods = foods.slice(0, 6)
+    const sortFoods = [...foods].sort((a,b) => b.food_quantity - a.food_quantity);
+    const showDisplayFoods = sortFoods.slice(0, 6)
     console.log(showDisplayFoods._id);
 
     // console.log(loadFoods);
