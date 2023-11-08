@@ -13,11 +13,28 @@ const Donate = () => {
 				</div>
 			</div>
 			<div>
-				<h1 className="text-5xl font-bold text-center py-8">Monthly Donation</h1>
+
+				<section className=" mt-8 p-6 bg-gray-800 text-gray-100">
+
+					<h1 className="text-5xl font-bold text-center py-8">Why Donate:</h1>
+
+					<p>Empower Positive Change: Your donation directly contributes to our initiatives and projects that empower positive change in our community.
+						Transform Lives: With your support, we can transform lives, provide opportunities, and create a brighter future for those in need.
+						Sustainability: Donations help us sustain our programs and expand our reach, ensuring long-term impact.
+						Ways to Give:</p>
+					<br />
+					<p> <span className="text-xl text-orange-400 font-bold pr-2">  One-Time Donation: </span> Make a one-time contribution to make an immediate impact.</p>
+					<p> <span className="text-xl text-orange-400 font-bold pr-2"> Monthly Giving: </span>  Join our community of monthly donors to provide ongoing support.</p>
+					<p> <span className="text-xl text-orange-400 font-bold pr-2"> In-Kind Donations: </span>  Donate goods or services that align with our mission.</p>
+					<p> <span className="text-xl text-orange-400 font-bold pr-2"> Fundraise: </span>  Organize a fundraising event or campaign to involve your network in supporting our cause.</p>
+				</section>
+
+				<h1 className="text-5xl font-bold text-center py-8">Give Some Donation</h1>
+
 				<section className="p-6 bg-gray-800 text-gray-100">
 					<div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
 						<div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 bg-gray-900">
-							<span className="block mb-2 text-violet-400">Monthly Donation</span>
+							<span className="block mb-2 text-violet-400"> Donation</span>
 							<h1 className="text-4xl font-extrabold text-gray-50">Build it with Food Sharing</h1>
 							<p className="my-8">
 								<span className="font-medium text-gray-50">We invite you to join Food Sharing </span>and fight alongside us as we redistribute resources and power to end hunger.

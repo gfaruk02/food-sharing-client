@@ -1,16 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-
 const ManageSingleFood = () => {
     const foods = useLoaderData();
     console.log(foods);
+  
 
     const handleDeliverd = e => {
-        e.preventDefault(); // Prevent the form from submitting by default
-        const status = "Delivered"; // Hardcode the status to "Delivered"
-        const food = { status };
+        const form = e.target;
+        const status = form.status.value;
+        const food = { status }
+        // console.log(name,brand,type,price,description,rating,photo);
+        console.log(food);
 
-        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${food._id}`, {
+        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${food.requistId}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -30,14 +32,14 @@ const ManageSingleFood = () => {
                 }
             })
     }
-
     return (
         <div className="my-20">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto ">
                 <table className="table w-full mx-auto p-0 m-0">
                     {/* head */}
                     <thead>
                         <tr className="text-xs md:text-base font-semibold text-black p-0 m-0 ">
+
                             <th>Requester Image</th>
                             <th>Requester Name</th>
                             <th>Requester Email</th>
@@ -49,18 +51,31 @@ const ManageSingleFood = () => {
                     <tbody>
                         <tr>
                             <td>
-                                <img className="w-14 h-10 md:w-16 md:h-12 rounded-lg" src={foods.userImage} alt="User" />
+                                <img className="w-14 h-10 md:w-16 md:h-12 rounded-lg" src={foods.userImage} />
                             </td>
+
                             <td>{foods.userName}</td>
                             <td>{foods.email}</td>
                             <td>{foods.time}</td>
                             <td>{foods.status}</td>
+                            {/* <td>
+                                <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                    Delivered
+                                    <input type="text" />
+                                </button>
+                            </td> */}
+
                             <td>
                                 <form onSubmit={handleDeliverd}>
-                                    <button type="submit">Delivered</button>
+                                    <label className="input-group">
+                                        {/* <input defaultValue="Delivered" type="text" name="status" className="input input-bordered w-full" /> */}
+                                        <button> Delivered</button>
+
+                                    </label>
                                 </form>
                             </td>
                         </tr>
+
                     </tbody>
                 </table>
             </div>
