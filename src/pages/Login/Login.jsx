@@ -25,20 +25,6 @@ const Login = () => {
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        // const user = {email};
-        // form.reset();
-        // axios.post('https://assignment-11-7-food-sharing-server.vercel.app/jwt', user, {
-        //   withCredentials:true})
-        //   .then(res => {
-        //     console.log(res.data);
-        //     if (res.data.success) {
-
-        //       Navigate(location?.state ? location.state : '/');
-        //     }
-        //   })
-
-
-
         e.target.reset();
         Navigate(location?.state?location.state : "/");
       })
@@ -99,11 +85,11 @@ const Login = () => {
               </label>
             </div>
             <div className="form-control mt-4">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary hover:bg-green-400 bg-green-800 text-white font-bold">Login</button>
             </div>
           </form>
           <div>
-            <button className='text-base pl-9 mb-3 ' onClick={handleGoolgeLogin}>
+            <button className='text-base pl-9 mb-3 ml-8 w-[84%] btn btn-outline btn-secondary' onClick={handleGoolgeLogin}>
               Google Login
             </button>
 

@@ -43,7 +43,7 @@ const Home = () => {
                             <p className="mt-6 mb-8 text-lg sm:mb-12">An initiative focused on reducing food waste and promoting food sharing within the community through a dedicated platform.
                             </p>
                             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                                <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">Join Us</a>
+                                <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold rounded text-white  hover:bg-green-400 bg-green-800">Join Us</a>
                                 <a rel="noopener noreferrer" href="#" className="px-8 py-3 text-lg font-semibold border rounded border-gray-100">See Details</a>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ const Home = () => {
 			<p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">Food First receives its funding from people just like you.  We dont accept corporate contributions or pursue government grants. This allows us to be a strong and independent voice that speaks truth to power! Advocating for food policy that is fair and equitable and enables nutritious and healthy food to be accessible and affordable, is what you have come to expect from Food First for nearly 50 years.</p>
 			<div className="flex flex-wrap justify-center">
 				<Link to='/donate'>
-                <button type="button" className="px-8 py-3 m-2 text-lg font-semibold rounded bg-gray-800 text-gray-50">Get Donate</button>
+                <button type="button" className="  hover:bg-green-400 bg-green-800 px-8 py-3 m-2 text-lg font-semibold rounded-lg text-gray-50">Get Donate</button>
                 </Link>
 			</div>
 		</div>
@@ -90,7 +90,7 @@ const Home = () => {
 			<label  className="text-sm">Message</label>
 			<textarea id="message" rows="3" className="w-full p-3 text-white rounded bg-gray-800"></textarea>
 		</div>
-		<button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded bg-violet-400 text-gray-900">Send Message</button>
+		<button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded hover:bg-green-400 bg-green-800 text-white">Send Message</button>
 	</form>
 </div>
         </div>

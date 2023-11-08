@@ -104,7 +104,7 @@ const Register = () => {
                   </div>
                 </div>
                 <div className="form-control mt-4">
-                  <button className="btn btn-primary">Register</button>
+                  <button className="btn btn-primary  hover:bg-green-400 bg-green-800 text-white font-bold">Register</button>
                 </div>
               </form>
               <div className='text-base pl-9 mb-5 '>

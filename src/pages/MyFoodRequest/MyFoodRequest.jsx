@@ -89,26 +89,6 @@ else{
                                 Cancel Request
                                 </button>
                             </td>
-                            {/* <td>
-                              
-                                <button onClick={() => handleDelete(food._id)} className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                    X
-                                </button>
-                            </td>
-                            <td>
-                            <Link to={`/updatefood/${food._id}`}>
-                                <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                Edit
-                                </button>
-                                </Link>
-                            </td>
-                            <td>
-                            <Link to={`/managesinglefoods/${food._id}`}>
-                                <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                Manage
-                                </button>
-                                </Link>
-                            </td> */}
                         </tr>)
                     }
                 </tbody>

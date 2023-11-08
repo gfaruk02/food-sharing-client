@@ -9,7 +9,7 @@ const Banner = () => {
                         <h2 className='text-5xl font-bold'>Donate Food Hare Today</h2>
                         <p>Food donation is a noble and compassionate act of giving surplus or unneeded food to individuals or organizations in need. It plays a crucial role in addressing issues such as hunger, food waste, and social inequalities. Heres some information about food donation:</p>
                         <div>
-                            <button className="btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
+                            <button className="  hover:bg-green-400 bg-green-800 btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ const Banner = () => {
                         <h2 className='text-5xl font-bold'>Join with Food Sharing</h2>
                         <p>Food donation is a noble and compassionate act of giving surplus or unneeded food to individuals or organizations in need. It plays a crucial role in addressing issues such as hunger, food waste, and social inequalities. Heres some information about food donation:</p>
                         <div>
-                            <button className="btn btn-primary ml-20 md:ml-0 px-20 mr-5">Join Us</button>
+                            <button className="  hover:bg-green-400 bg-green-800 btn btn-primary ml-20 md:ml-0 px-20 mr-5">Join Us</button>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Banner = () => {
                         <h2 className='text-5xl font-bold'>Become a food donor.</h2>
                         <p>Our donor partners range from large food distributors to small mom-and-pop stores, restaurant chains, urban farms and many others! No matter how big or small the donor or donation, every partner has a significant impact.</p>
                         <div>
-                            <button className="btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
+                            <button className="  hover:bg-green-400 bg-green-800 btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const Banner = () => {
                         <h2 className='text-5xl font-bold'>Donate Food Hare Today</h2>
                         <p>Food donation is a noble and compassionate act of giving surplus or unneeded food to individuals or organizations in need. It plays a crucial role in addressing issues such as hunger, food waste, and social inequalities. Heres some information about food donation:</p>
                         <div>
-                            <button className="btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
+                            <button className="  hover:bg-green-400 bg-green-800 btn btn-primary ml-20 md:ml-0 px-20 mr-5">Donate</button>
                         </div>
                     </div>
                 </div>

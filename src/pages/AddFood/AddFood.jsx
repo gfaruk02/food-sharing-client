@@ -107,7 +107,7 @@ const AddFood = () => {
                                 <input name="status" type="text" placeholder="available" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900" />
                             </div> */}
                             <div className=" col-span-full">
-                                <button className="w-full py-2 border border-white pl-2 rounded-md focus:ring focus:ri focus:ri bg-lime-600">
+                                <button className="w-full py-2 border  hover:bg-green-400 bg-green-800 border-white pl-2 rounded-md focus:ring focus:ri focus:ri font-bold">
                                     <input name="" type="submit" value="Submit" />
                                 </button>
                             </div>

@@ -60,7 +60,7 @@ const Donate = () => {
 									<label className="text-sm sr-only">Food Quintity</label>
 									<input id="lastname" type="text" placeholder="Food Quintity" className="w-full py-2 rounded-md focus:ring focus:ri border-gray-700 text-black" />
 								</div>
-								<button type="button" className="w-full py-2 font-semibold rounded bg-violet-400 text-gray-900">Donate</button>
+								<button type="button" className="w-full py-2 font-semibold rounded  hover:bg-green-400 bg-green-800 text-white">Donate</button>
 							</form>
 						</div>
 						<img src="https://i.ibb.co/0GPRbT2/d8.jpg" alt="" className="object-cover w-full h-full rounded-md xl:col-span-3 bg-gray-500" />
