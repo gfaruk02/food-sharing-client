@@ -9,7 +9,7 @@ const Home = () => {
     const foods = useFoods();
     const sortFoods = [...foods].sort((a,b) => b.food_quantity - a.food_quantity);
     const showDisplayFoods = sortFoods.slice(0, 6)
-    console.log(showDisplayFoods._id);
+    // console.log(showDisplayFoods._id);
 
     // console.log(loadFoods);
     return (

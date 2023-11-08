@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ManageFood = () => {
     const {user} = useContext(AuthContext);
     const [manageFood, setManageFood] = useState();
-    const url= `http://localhost:5000/food?email=${user?.email}`
+    const url= `https://assignment-11-7-food-sharing-server.vercel.app/food?email=${user?.email}`
     useEffect(()=>{
         fetch(url, {credentials: 'include'})
         .then(res=>res.json())
@@ -16,7 +16,7 @@ const ManageFood = () => {
     },[user, url])
 // console.log(manageFood);
 const handleDelete = (_id) => {
-    console.log(_id);
+    // console.log(_id);
 
     //sweel alert
     Swal.fire({
@@ -29,7 +29,7 @@ const handleDelete = (_id) => {
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/foods/${_id}`, {
+            fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods/${_id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

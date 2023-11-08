@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate,  } from "react-router-dom";
+import { useLoaderData, useNavigate, } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateFood = () => {
@@ -17,11 +17,11 @@ const UpdateFood = () => {
         const pickup_location = form.pickup_location.value;
         const expired_datetime = form.expired_datetime.value;
         const additional_notes = form.additional_notes.value;
-        const food = { food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes,  }
+        const food = { food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, }
         // console.log(name,brand,type,price,description,rating,photo);
         console.log(food);
 
-        fetch(`http://localhost:5000/foods/${_id}`, {
+        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -65,7 +65,7 @@ const UpdateFood = () => {
                             <input defaultValue={food_image} type="text" name="food_image" className="input input-bordered w-full" />
                         </label>
                     </div>
-                 </div>
+                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
                     <div className="form-control">
@@ -84,7 +84,7 @@ const UpdateFood = () => {
                             <input defaultValue={pickup_location} type="text" name="pickup_location" className="input input-bordered w-full" />
                         </label>
                     </div>
-                 </div>
+                </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 justify-center">
                     <div className="form-control">
                         <label className="label">
@@ -102,12 +102,8 @@ const UpdateFood = () => {
                             <input defaultValue={additional_notes} type="text" name="additional_notes" placeholder=" additional_notes" className="input input-bordered w-full" />
                         </label>
                     </div>
-                 </div>
-
-
-
+                </div>
                 <input className="btn btn-block my-10 bg-green-700  text-white hover:bg-green-500" type="submit" value="Update Food" />
-
             </form>
         </div>
     );

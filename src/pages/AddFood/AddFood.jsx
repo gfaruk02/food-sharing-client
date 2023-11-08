@@ -20,7 +20,7 @@ const AddFood = () => {
         const addFoodInfo = {food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, status ,   donator_name: user.displayName,   email: user.email,  donator_image: user.photoURL }
         console.log(addFoodInfo);
         if (user) {
-            fetch('http://localhost:5000/foods', {
+            fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"

@@ -32,17 +32,17 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        // loader: ()=> fetch('http://localhost:5000/foods')
+        // loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
         path:'/showallfoods',
         element:<ShowAllFoods></ShowAllFoods>,
-        loader: ()=> fetch('http://localhost:5000/foods')
+        loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
         path:"/viewDetails/:_id",
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader: ()=> fetch('http://localhost:5000/foods')
+        loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
         path: '/addfood',
@@ -55,13 +55,12 @@ const router = createBrowserRouter([
       {
         path: '/updatefood/:id',
         element: <PrivateRoute> <UpdateFood></UpdateFood> </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods/${params.id}`)
       },
       {
-        path: '/managesinglefoods/:id',
+        path: '/managesinglefoods/:requistId',
         element: <PrivateRoute> <ManageSingleFood></ManageSingleFood> </PrivateRoute>,
-        // loader: ({ params })=> fetch(`http://localhost:5000/foodRequests/${params.id}`)
-        loader: ()=> fetch('http://localhost:5000/foodRequests')
+        loader: ({ params })=> fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${params.requistId}`)
       },
       {
         path: '/myfoodrequest',

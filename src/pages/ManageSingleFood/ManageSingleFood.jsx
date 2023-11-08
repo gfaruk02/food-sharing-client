@@ -1,15 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Components/Provider/AuthProvider";
+// import { useEffect, useState } from "react";
+// import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 
 const ManageSingleFood = () => {
     const foods= useLoaderData();
-
-    const {user} = useContext(AuthContext);
-    const [manageSingleFood, setManageSingleFood] = useState([]);
-    // const url= `http://localhost:5000/foodreruest?email=${user?.email}`
+    console.log(foods);
+    // const { _id } = useParams();
+    // console.log(_id);
+    // const {user} = useContext(AuthContext);
+    // const [manageSingleFood, setManageSingleFood] = useState([]);
+    // const url= `https://assignment-11-7-food-sharing-server.vercel.app/foodreruest?email=${user?.email}`
     // useEffect(()=>{
     //     fetch(url, {credentials: 'include'})
     //     .then(res=>res.json())
@@ -18,12 +20,14 @@ const ManageSingleFood = () => {
     //     })
     // },[user, url])
 
-    useEffect(() => {
-        const foodItem = foods?.find(food => food.donatorEmail === user?.email)
-        setManageSingleFood(foodItem);
-    }, [foods, user?.email])
+    // useEffect(() => {
+    //     // const foodItem = foods?.find(food => food.donatorEmail === user?.email)
+    //     const foodItem = foods?.find(food => food._id === _id)
+    //     console.log('food item', foodItem);
+    //     setManageSingleFood(foodItem);
+    // }, [foods, _id])
     // const {userName} = manageSingleFood;
-    console.log(manageSingleFood);
+    // console.log(manageSingleFood);
     return (
         <div className="my-20">
         <div className="overflow-x-auto ">
@@ -40,42 +44,21 @@ const ManageSingleFood = () => {
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-      
-                        
+                <tbody>             
                         <tr>
-
-                            
                             <td>
-                                <img className="w-14 h-10 md:w-16 md:h-12 rounded-lg" src={manageSingleFood.userImage} />
+                                <img className="w-14 h-10 md:w-16 md:h-12 rounded-lg" src={foods.userImage} />
                             </td>
 
-                            <td>{manageSingleFood.userName}</td>
-                            <td>{manageSingleFood.email}</td>
-                            <td>{manageSingleFood.time}</td>
-                            <td>{manageSingleFood.status}</td>
-                            {/* <td> */}
-                                {/* <button className="hover:bg-red-400 hover:text-white  p-5 rounded-lg text-red-500 font-bold">
-                                    X
-                                </button> */}
-                                {/* <button onClick={() => handleDelete(food._id)} className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                    X
+                            <td>{foods.userName}</td>
+                            <td>{foods.email}</td>
+                            <td>{foods.time}</td>
+                            <td>{foods.status}</td>
+                             <td>
+                                 <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                 Delivered
                                 </button>
                             </td>
-                            <td>
-                            <Link to={`/updatefood/${food._id}`}>
-                                <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                Edit
-                                </button>
-                                </Link>
-                            </td>
-                            <td>
-                            <Link to={`/managesinglefoods/${food._id}`}>
-                                <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                Manage
-                                </button>
-                                </Link>
-                            </td> */}
                         </tr>
                   
                 </tbody>

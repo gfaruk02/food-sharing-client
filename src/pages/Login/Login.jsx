@@ -27,7 +27,7 @@ const Login = () => {
         console.log(loggedUser);
         // const user = {email};
         // form.reset();
-        // axios.post('http://localhost:5000/jwt', user, {
+        // axios.post('https://assignment-11-7-food-sharing-server.vercel.app/jwt', user, {
         //   withCredentials:true})
         //   .then(res => {
         //     console.log(res.data);

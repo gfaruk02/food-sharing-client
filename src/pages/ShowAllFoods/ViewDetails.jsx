@@ -16,7 +16,7 @@ const ViewDetails = () => {
         const foodItem = allFoods?.find(food => food._id === _id)
         setFood(foodItem);
     }, [_id, allFoods])
-    console.log(food);
+    // console.log(food);
     const {donator_name, email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes, status } = food;
     const d = new Date()
     let time = d.toLocaleDateString();
@@ -46,10 +46,10 @@ const ViewDetails = () => {
             time
 
          };
-        console.log(foodRequest);
+        // console.log(foodRequest);
 
         if (user) {
-            fetch('http://localhost:5000/foodRequests', {
+            fetch('https://assignment-11-7-food-sharing-server.vercel.app/foodRequests', {
                 method: "POST",
                 headers: {
                     "content-type": "application/json"
@@ -65,11 +65,9 @@ const ViewDetails = () => {
                             text: 'Your Food Request Added in Successfully',
                             icon: 'success',
                             confirmButtonText: 'Ok',
-
                         })
                     }
                 })
-                
         }
         else {
             Navigate('/login')

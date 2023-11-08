@@ -8,7 +8,7 @@ const ManageSingleFood = () => {
     // const loadfoods = useLoaderData();
     const [manageFood, setManageFood] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/foodRequests?email=${user.email}`)
+        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             setManageFood(data)

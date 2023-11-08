@@ -52,7 +52,7 @@ const App = ({children}) => {
   const { user } = useContext(AuthProvider)
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/foods?email=${user.email}`)
+    fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods?email=${user.email}`)
       .then(res => res.json())
       .then(data => {
         setData(data)

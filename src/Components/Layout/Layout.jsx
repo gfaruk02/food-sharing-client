@@ -6,11 +6,9 @@ import { useEffect } from "react";
 
 const Layout = () => {
     const loc = useLocation();
-    console.log(loc.pathname);
     useEffect(()=>{
-        console.log(loc.pathname);
         if(loc.pathname === '/'){
-            console.log(loc.pathname);
+            // console.log(loc.pathname);
             document.title = `Food-Sharing | home`;
         }
         else{

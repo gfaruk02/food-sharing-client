@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useFoods = () => {
     const [foods, setFoods] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/foods')
+        fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
         .then(res=>res.json())
         .then(data=> setFoods(data));
     },[])
