@@ -4,50 +4,50 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const ManageFood = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [manageFood, setManageFood] = useState();
-    const url= `https://assignment-11-7-food-sharing-server.vercel.app/food?email=${user?.email}`
-    useEffect(()=>{
-        fetch(url, {credentials: 'include'})
-        .then(res=>res.json())
-        .then(data=>{
-            setManageFood(data)
-        })
-    },[user, url])
-// console.log(manageFood);
-const handleDelete = (_id) => {
-    // console.log(_id);
-
-    //sweel alert
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods/${_id}`, {
-                method: "DELETE"
+    const url = `https://assignment-11-7-food-sharing-server.vercel.app/food?email=${user?.email}`
+    useEffect(() => {
+        fetch(url, { credentials: 'include' })
+            .then(res => res.json())
+            .then(data => {
+                setManageFood(data)
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your Coffee has been deleted.',
-                            'success'
-                        )
-                        const remaining = manageFood.filter(food => food._id !== _id);
-                        setManageFood(remaining);
-                    }
+    }, [user, url])
+    // console.log(manageFood);
+    const handleDelete = (_id) => {
+        // console.log(_id);
+
+        //sweel alert
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foods/${_id}`, {
+                    method: "DELETE"
                 })
-        }
-    })
-}
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Coffee has been deleted.',
+                                'success'
+                            )
+                            const remaining = manageFood.filter(food => food._id !== _id);
+                            setManageFood(remaining);
+                        }
+                    })
+            }
+        })
+    }
     return (
         <div className="my-20">
             <div className="overflow-x-auto ">
@@ -90,17 +90,17 @@ const handleDelete = (_id) => {
                                     </button>
                                 </td>
                                 <td>
-                                <Link to={`/updatefood/${food._id}`}>
-                                    <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                    Edit
-                                    </button>
+                                    <Link to={`/updatefood/${food._id}`}>
+                                        <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                            Edit
+                                        </button>
                                     </Link>
                                 </td>
                                 <td>
-                                <Link to={`/managesinglefoods/${food._id}`}>
-                                    <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
-                                    Manage
-                                    </button>
+                                    <Link to={`/managesinglefoods/${food._id}`}>
+                                        <button className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                            Manage
+                                        </button>
                                     </Link>
                                 </td>
                             </tr>)

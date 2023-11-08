@@ -7,7 +7,7 @@ import Banner from "./Banner";
 const Home = () => {
     // const loadFoods = useLoaderData()
     const foods = useFoods();
-    const sortFoods = [...foods].sort((a,b) => b.food_quantity - a.food_quantity);
+    const sortFoods = [...foods].sort((a, b) => b.food_quantity - a.food_quantity);
     const showDisplayFoods = sortFoods.slice(0, 6)
     // console.log(showDisplayFoods._id);
 
@@ -55,44 +55,44 @@ const Home = () => {
 
             </div>
             <section className="bg-gray-800 pb-3 rounded-xl">
-	<div className="bg-violet-400 mx-6">
-		<div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
-			<h1 className="text-5xl font-bold leadi sm:text-6xl xl:max-w-3xl text-gray-900">Become a Food Sharing Monthly Sustainer Donor!</h1>
-			<p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">Food First receives its funding from people just like you.  We dont accept corporate contributions or pursue government grants. This allows us to be a strong and independent voice that speaks truth to power! Advocating for food policy that is fair and equitable and enables nutritious and healthy food to be accessible and affordable, is what you have come to expect from Food First for nearly 50 years.</p>
-			<div className="flex flex-wrap justify-center">
-				<Link to='/donate'>
-                <button type="button" className="  hover:bg-green-400 bg-green-800 px-8 py-3 m-2 text-lg font-semibold rounded-lg text-gray-50">Get Donate</button>
-                </Link>
-			</div>
-		</div>
-	</div>
-	<img src="https://i.ibb.co/WGMQ86v/d1.jpg" alt="" className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-52 bg-gray-500" />
-</section>
+                <div className="bg-violet-400 mx-6">
+                    <div className="container flex flex-col items-center px-4 py-16 pb-24 mx-auto text-center lg:pb-56 md:py-32 md:px-10 lg:px-32 text-gray-900">
+                        <h1 className="text-5xl font-bold leadi sm:text-6xl xl:max-w-3xl text-gray-900">Become a Food Sharing Monthly Sustainer Donor!</h1>
+                        <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl text-gray-900">Food First receives its funding from people just like you.  We dont accept corporate contributions or pursue government grants. This allows us to be a strong and independent voice that speaks truth to power! Advocating for food policy that is fair and equitable and enables nutritious and healthy food to be accessible and affordable, is what you have come to expect from Food First for nearly 50 years.</p>
+                        <div className="flex flex-wrap justify-center">
+                            <Link to='/donate'>
+                                <button type="button" className="  hover:bg-green-400 bg-green-800 px-8 py-3 m-2 text-lg font-semibold rounded-lg text-gray-50">Get Donate</button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://i.ibb.co/WGMQ86v/d1.jpg" alt="" className="w-5/6 mx-auto mb-12 -mt-20 rounded-lg shadow-md lg:-mt-52 bg-gray-500" />
+            </section>
 
-<div className="mt-12 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 border-2 border-gray-800">
-	<div className="flex flex-col justify-between">
-		<div className="space-y-2">
-			<h2 className="text-4xl font-bold leadi lg:text-5xl">Lets talk!</h2>
-			<div className="text-gray-400">Give your message, we reply 24/7</div>
-		</div>
-		<img src="https://i.ibb.co/rxKRGxg/talk.jpg" alt="" className="px-6" />
-	</div>
-	<form  className="space-y-6 pt-6">
-		<div>
-			<label  className="text-sm">Full name</label>
-			<input id="name" type="text" placeholder="" className="w-full p-3 rounded bg-gray-800" />
-		</div>
-		<div>
-			<label  className="text-sm">Email</label>
-			<input id="email" type="email" className="w-full p-3 rounded bg-gray-800" />
-		</div>
-		<div>
-			<label  className="text-sm">Message</label>
-			<textarea id="message" rows="3" className="w-full p-3 text-white rounded bg-gray-800"></textarea>
-		</div>
-		<button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded hover:bg-green-400 bg-green-800 text-white">Send Message</button>
-	</form>
-</div>
+            <div className="mt-12 grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-8 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 border-2 border-gray-800">
+                <div className="flex flex-col justify-between">
+                    <div className="space-y-2">
+                        <h2 className="text-4xl font-bold leadi lg:text-5xl">Lets talk!</h2>
+                        <div className="text-gray-400">Give your message, we reply 24/7</div>
+                    </div>
+                    <img src="https://i.ibb.co/rxKRGxg/talk.jpg" alt="" className="px-6" />
+                </div>
+                <form className="space-y-6 pt-6">
+                    <div>
+                        <label className="text-sm">Full name</label>
+                        <input id="name" type="text" placeholder="" className="w-full p-3 rounded bg-gray-800" />
+                    </div>
+                    <div>
+                        <label className="text-sm">Email</label>
+                        <input id="email" type="email" className="w-full p-3 rounded bg-gray-800" />
+                    </div>
+                    <div>
+                        <label className="text-sm">Message</label>
+                        <textarea id="message" rows="3" className="w-full p-3 text-white rounded bg-gray-800"></textarea>
+                    </div>
+                    <button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded hover:bg-green-400 bg-green-800 text-white">Send Message</button>
+                </form>
+            </div>
         </div>
     );
 };

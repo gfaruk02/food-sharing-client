@@ -35,14 +35,14 @@ const router = createBrowserRouter([
         // loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
-        path:'/showallfoods',
-        element:<ShowAllFoods></ShowAllFoods>,
-        loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
+        path: '/showallfoods',
+        element: <ShowAllFoods></ShowAllFoods>,
+        loader: () => fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
-        path:"/viewDetails/:_id",
+        path: "/viewDetails/:_id",
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader: ()=> fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
+        loader: () => fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods')
       },
       {
         path: '/addfood',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/managesinglefoods/:requistId',
         element: <PrivateRoute> <ManageSingleFood></ManageSingleFood> </PrivateRoute>,
-        loader: ({ params })=> fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${params.requistId}`)
+        loader: ({ params }) => fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${params.requistId}`)
       },
       {
         path: '/myfoodrequest',

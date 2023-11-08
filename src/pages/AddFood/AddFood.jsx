@@ -3,9 +3,9 @@ import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const AddFood = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const statuss = 'Available';
-    const handleAddFood = e =>{
+    const handleAddFood = e => {
         e.preventDefault();
         const form = e.target;
         const food_name = form.foodName.value;
@@ -17,7 +17,7 @@ const AddFood = () => {
         const status = form.status.value;
 
 
-        const addFoodInfo = {food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, status ,   donator_name: user.displayName,   email: user.email,  donator_image: user.photoURL }
+        const addFoodInfo = { food_name, food_image, food_quantity, pickup_location, expired_datetime, additional_notes, status, donator_name: user.displayName, email: user.email, donator_image: user.photoURL }
         console.log(addFoodInfo);
         if (user) {
             fetch('https://assignment-11-7-food-sharing-server.vercel.app/foods', {
@@ -41,7 +41,7 @@ const AddFood = () => {
                         form.reset();
                     }
                 })
-                
+
         }
     }
     return (
@@ -74,12 +74,12 @@ const AddFood = () => {
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">  Food Status</label>
-                                <input name="status" type="text" value={statuss} placeholder="Available" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900" disabled/>
+                                <input name="status" type="text" value={statuss} placeholder="Available" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900" disabled />
                             </div>
                             <div className="col-span-full">
-					<label  className="text-sm"> Additional Notes</label>
-					<input name="notes" type="text" placeholder=" Additional Notes" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri text-black" />
-				</div>
+                                <label className="text-sm"> Additional Notes</label>
+                                <input name="notes" type="text" placeholder=" Additional Notes" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri text-black" />
+                            </div>
                             {/* <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">  Additional Notes</label>
                                 <input name="notes" type="text" placeholder=" Additional Notes" className="w-full py-2 pl-2 rounded-md focus:ring focus:ri focus:ri border-gray-700 text-gray-900" />

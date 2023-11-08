@@ -8,9 +8,9 @@ const Footer = () => {
                     <div className="lg:w-1/3">
                         <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
                             <div className="flex items-center justify-center w-36 h-28">
-                               <img src="https://i.ibb.co/xgz0HsN/food-sharing.png" alt="" />
+                                <img src="https://i.ibb.co/xgz0HsN/food-sharing.png" alt="" />
                             </div>
-                          
+
                         </a>
                     </div>
                     <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
@@ -26,7 +26,7 @@ const Footer = () => {
                                 <li>
                                     <a rel="noopener noreferrer" href="#">foodsgaring@admin.com</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                         <div className="space-y-3">

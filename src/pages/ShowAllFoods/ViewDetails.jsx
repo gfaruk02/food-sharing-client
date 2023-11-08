@@ -17,23 +17,23 @@ const ViewDetails = () => {
         setFood(foodItem);
     }, [_id, allFoods])
     // console.log(food);
-    const {donator_name, email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes, status } = food;
+    const { donator_name, email, food_image, food_name, food_quantity, pickup_location, expired_datetime, additional_notes, status } = food;
     const d = new Date()
     let time = d.toLocaleDateString();
 
-    
-    const handleFoodReguest=(e)=>{
+
+    const handleFoodReguest = (e) => {
         e.preventDefault();
         const form = e.target;
         const time = form.time.value;
         const additional_notes = form.additional_notes.value;
         const money = form.money.value;
 
-        const foodRequest = { 
+        const foodRequest = {
             requistId: _id,
-            name:food_name, 
+            name: food_name,
             photo: food_image,
-            donatorEmail:email,
+            donatorEmail: email,
             donatorName: donator_name,
             email: user.email,
             userName: user.displayName,
@@ -41,11 +41,11 @@ const ViewDetails = () => {
             location: pickup_location,
             expired_datetime: expired_datetime,
             additional_notes,
-            status:status,
+            status: status,
             money,
             time
 
-         };
+        };
         // console.log(foodRequest);
 
         if (user) {
@@ -78,16 +78,16 @@ const ViewDetails = () => {
     return (
         <div className="mt-10">
             <section className="py-6 bg-gray-500 text-gray-50">
-            <motion.div
-  animate={{ x: 100 }}
-  transition={{ ease: "easeOut", duration: 2 }} className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-10 px-10">
+                <motion.div
+                    animate={{ x: 100 }}
+                    transition={{ ease: "easeOut", duration: 2 }} className="grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-10 px-10">
                     <p>Donator Name: {donator_name}</p>
                     <p>Food Pickup Location: {pickup_location}</p>
                 </motion.div>
                 <div className="container mx-auto flex flex-col items-center justify-center max-w-lg p-4 lg:max-w-full lg:flex-row">
                     <motion.div
-  animate={{ x: 10 }}
-  transition={{ ease: "easeOut", duration:1 }} className="flex flex-col space-y-3 flex-1 p-4 pb-8 sm:p-8 lg:p-16 bg-gray-900 rounded-l-lg">
+                        animate={{ x: 10 }}
+                        transition={{ ease: "easeOut", duration: 1 }} className="flex flex-col space-y-3 flex-1 p-4 pb-8 sm:p-8 lg:p-16 bg-gray-900 rounded-l-lg">
                         <h1 className="text-2xl font-bold text-left"> Food Name: {food_name}</h1>
                         <p className="text-xl font-bold text-left">Food Quantity: {food_quantity}</p>
                         <p className="text-xl font-bold text-left">Expired Date: {expired_datetime}</p>
@@ -149,14 +149,14 @@ const ViewDetails = () => {
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32">Additional Notes:</span>
-                                        <input type="text" name="additional_notes" placeholder="Additional Notes" className="input input-bordered flex-1" required/>
+                                        <input type="text" name="additional_notes" placeholder="Additional Notes" className="input input-bordered flex-1" required />
                                     </div>
                                     <div className="text-base font-semibold flex items-center">
                                         <span className="mr-1 w-32">Donation Money:</span>
                                         <input type="number" name="money" className="input input-bordered flex-1" required />
                                     </div>
                                     <div className="form-control mt-6">
-                                        <button className="btn btn-primary">Request</button>
+                                        <button className="btn btn-primary hover:bg-green-400 bg-green-800 text-white font-bold">Request</button>
                                     </div>
                                 </form>
                                 <div className="modal-action">

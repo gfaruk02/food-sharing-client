@@ -25,7 +25,7 @@ const FeaturedFoods = ({ food }) => {
 						</div>
 					</div>
 					<Link to={`/viewDetails/${_id}`}>
-					<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracki rounded-md bg-violet-400 text-gray-900">View Detail</button>
+					<button type="button" className="hover:bg-green-400 bg-green-800 text-white font-bold flex items-center justify-center w-full p-3 tracki rounded-md">View Detail</button>
 					</Link>
 				</div>
 			</motion.div>

@@ -26,7 +26,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         e.target.reset();
-        Navigate(location?.state?location.state : "/");
+        Navigate(location?.state ? location.state : "/");
       })
       .catch(error => {
         console.log(error);
@@ -42,7 +42,7 @@ const Login = () => {
     gooleSignIn()
       .then(result => {
         console.log(result);
-        Navigate(location?.state?location.state : "/");
+        Navigate(location?.state ? location.state : "/");
       })
       .catch(error => {
         console.log(error);

@@ -5,10 +5,10 @@ import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const handlesignOut =()=>{
+  const handlesignOut = () => {
     logOut()
-      .then(()=> console.log('User LogOut Success'))
-      .catch(error=> console.error(error))
+      .then(() => console.log('User LogOut Success'))
+      .catch(error => console.error(error))
   }
   const navLinks = <>
     <li className=" font-semibold text-base">
@@ -38,77 +38,77 @@ const Navbar = () => {
           };
         }}
       >
-       Available Foods
+        Available Foods
       </NavLink>
     </li>
-{  user && <>
-    
-  <li className=" font-semibold text-base">
-      <NavLink
-        to="/addfood"
-        style={({ isActive, isPending, isTransitioning }) => {
-          return {
-            fontWeight: isActive ? "bold" : "bold",
-            color: isPending ? "white" : "",
-            backgroundColor: isActive ? "green" : "",
-            viewTransitionName: isTransitioning ? "slide" : "",
-          };
-        }}
-      >
-        Add Food
-      </NavLink>
-    </li>
-    
-  <li className=" font-semibold text-base">
-      <NavLink
-        to="/managefood"
-        style={({ isActive, isPending, isTransitioning }) => {
-          return {
-            fontWeight: isActive ? "bold" : "bold",
-            color: isPending ? "white" : "",
-            backgroundColor: isActive ? "green" : "",
-            viewTransitionName: isTransitioning ? "slide" : "",
-          };
-        }}
-      >
-        Manage Food
-      </NavLink>
-    </li>
-  <li className=" font-semibold text-base">
-      <NavLink
-        to="/myfoodrequest"
-        style={({ isActive, isPending, isTransitioning }) => {
-          return {
-            fontWeight: isActive ? "bold" : "bold",
-            color: isPending ? "white" : "",
-            backgroundColor: isActive ? "green" : "",
-            viewTransitionName: isTransitioning ? "slide" : "",
-          };
-        }}
-      >
-       My Food Request
-      </NavLink>
-    </li>
-    
-  <li className=" font-semibold text-base">
-      <NavLink
-        to="/donate"
-        style={({ isActive, isPending, isTransitioning }) => {
-          return {
-            fontWeight: isActive ? "bold" : "bold",
-            color: isPending ? "white" : "",
-            backgroundColor: isActive ? "green" : "",
-            viewTransitionName: isTransitioning ? "slide" : "",
-          };
-        }}
-      >
-        Donate
-      </NavLink>
-    </li>
+    {user && <>
 
-    
- </>
-    
+      <li className=" font-semibold text-base">
+        <NavLink
+          to="/addfood"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "bold",
+              color: isPending ? "white" : "",
+              backgroundColor: isActive ? "green" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Add Food
+        </NavLink>
+      </li>
+
+      <li className=" font-semibold text-base">
+        <NavLink
+          to="/managefood"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "bold",
+              color: isPending ? "white" : "",
+              backgroundColor: isActive ? "green" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Manage Food
+        </NavLink>
+      </li>
+      <li className=" font-semibold text-base">
+        <NavLink
+          to="/myfoodrequest"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "bold",
+              color: isPending ? "white" : "",
+              backgroundColor: isActive ? "green" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          My Food Request
+        </NavLink>
+      </li>
+
+      <li className=" font-semibold text-base">
+        <NavLink
+          to="/donate"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "bold",
+              color: isPending ? "white" : "",
+              backgroundColor: isActive ? "green" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Donate
+        </NavLink>
+      </li>
+
+
+    </>
+
     }
     <li className=" font-semibold text-base">
       <NavLink
@@ -164,7 +164,7 @@ const Navbar = () => {
           </ul>
         </div>
         {/* user Profile */}
-        { user ? <div className="dropdown dropdown-end ml-32">
+        {user ? <div className="dropdown dropdown-end ml-32">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img src={user.photoURL} />
@@ -180,10 +180,10 @@ const Navbar = () => {
             <li><button onClick={handlesignOut}>Sign Out</button></li>
           </ul>
         </div>
-        :
-        <Link to='/login'>
-    <button className="ml-32 bg-green-700 rounded-lg hover:bg-green-400 text-white font-semibold py-1 px-2 md:py-2 md:px-4 text-sm md:text-base">Login</button>
-        </Link>
+          :
+          <Link to='/login'>
+            <button className="ml-32 bg-green-700 rounded-lg hover:bg-green-400 text-white font-semibold py-1 px-2 md:py-2 md:px-4 text-sm md:text-base">Login</button>
+          </Link>
         }
         {/* {
     user ? <>
