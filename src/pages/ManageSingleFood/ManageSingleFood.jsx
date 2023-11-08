@@ -10,7 +10,7 @@ const ManageSingleFood = () => {
         const status = "Delivered"; // Hardcode the status to "Delivered"
         const food = { status };
 
-        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${food._id}`, {
+        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${foods._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

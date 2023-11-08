@@ -28,24 +28,29 @@ const handleDelete = (_id) => {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
-        if (result.isConfirmed) {
-            fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${_id}`, {
-                method: "DELETE"
+if(myFoodRequest.status.value === 'Delivered'){
+alert('already delivered')
+}
+else{
+    if (result.isConfirmed) {
+        fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${_id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your Coffee has been deleted.',
+                        'success'
+                    )
+                    const remaining = myFoodRequest.filter(food => food._id !== _id);
+                    setmyFoodRequest(remaining);
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        Swal.fire(
-                            'Deleted!',
-                            'Your Coffee has been deleted.',
-                            'success'
-                        )
-                        const remaining = myFoodRequest.filter(food => food._id !== _id);
-                        setmyFoodRequest(remaining);
-                    }
-                })
-        }
+    }
+}
     })
 }
     return (
