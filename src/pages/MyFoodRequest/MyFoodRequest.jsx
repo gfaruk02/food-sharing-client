@@ -15,6 +15,8 @@ const MyFoodRequest = () => {
             })
     }, [user, url])
     console.log(myFoodRequest);
+
+
     const handleDelete = (_id) => {
         console.log(_id);
 
@@ -91,7 +93,7 @@ const MyFoodRequest = () => {
                                     <button
                                         onClick={() => handleDelete(food._id)}
                                         className={`hover:bg-red-400 hover:text-white p-2 rounded-lg font-bold ${
-                                            food.status === 'Delivered' ? 'text-gray-400 cursor-not-allowed' : 'text-red-500'
+                                            food.status === 'Delivered' ? 'text-gray-400 hover:bg-none cursor-not-allowed' : 'text-red-500'
                                         }`}
                                         disabled={food.status === 'Delivered'}
                                     >
