@@ -28,9 +28,9 @@ const MyFoodRequest = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            if (myFoodRequest.status.value === 'Delivered') {
-                alert('already delivered')
-            }
+            if (myFoodRequest.status === 'Delivered') {
+                alert('This request has already been delivered and cannot be deleted.');
+            } 
             else {
                 if (result.isConfirmed) {
                     fetch(`https://assignment-11-7-food-sharing-server.vercel.app/foodRequests/${_id}`, {
@@ -85,7 +85,16 @@ const MyFoodRequest = () => {
                                 <td>{food.status}</td>
                                 <td>
 
-                                    <button onClick={() => handleDelete(food._id)} className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                    {/* <button onClick={() => handleDelete(food._id)} className="hover:bg-red-400 hover:text-white p-2 rounded-lg text-red-500 font-bold">
+                                        Cancel Request
+                                    </button> */}
+                                    <button
+                                        onClick={() => handleDelete(food._id)}
+                                        className={`hover:bg-red-400 hover:text-white p-2 rounded-lg font-bold ${
+                                            food.status === 'Delivered' ? 'text-gray-400 cursor-not-allowed' : 'text-red-500'
+                                        }`}
+                                        disabled={food.status === 'Delivered'}
+                                    >
                                         Cancel Request
                                     </button>
                                 </td>

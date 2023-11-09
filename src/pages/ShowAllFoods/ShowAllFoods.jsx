@@ -30,6 +30,10 @@ const ShowAllFoods = () => {
         });
         setSearchFood(sortedFoods);
     };
+
+        // Filter out "Delivered" items from the searchFood list
+        const filteredFood = searchFood.filter(food => food.status !== "Delivered");
+
     return (
         <motion.div 
         initial={{ opacity: 0 }}
@@ -68,7 +72,7 @@ const ShowAllFoods = () => {
 
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-5">
             {
-                searchFood?.map(food=> <ShowAllCards key={food._id} food={food}> </ShowAllCards>)
+                filteredFood?.map(food=> <ShowAllCards key={food._id} food={food}> </ShowAllCards>)
             }
         </div>
         </motion.div>
