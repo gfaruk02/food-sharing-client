@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 const ViewDetails = () => {
     // const allFoods = useFoods();
     const { user } = useContext(AuthContext)
+    console.log(user);
     const allFoods = useLoaderData();
     const { _id } = useParams();
     const [food, setFood] = useState([]);

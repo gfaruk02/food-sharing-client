@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FeaturedFoods from "../../Components/FeaturedFoods/FeaturedFoods";
 import useFoods from "../../Hooks/useFoods";
 import Banner from "./Banner";
 // import { motion } from "framer-motion";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Home = () => {
     // const loadFoods = useLoaderData()
@@ -10,7 +13,25 @@ const Home = () => {
     const sortFoods = [...foods].sort((a, b) => b.food_quantity - a.food_quantity);
     const showDisplayFoods = sortFoods.slice(0, 6)
     // console.log(showDisplayFoods._id);
-
+	const form = useRef();
+const navigate = useNavigate()
+	const sendEmail = (e) => {
+		e.preventDefault();
+		emailjs.sendForm('service_vrh7xmo', 'template_7l5i0mv', form.current, 'i_derrmnxsq1O7Y5I')
+			.then((result) => {
+				console.log(result.text);
+				Swal.fire({
+					position: "top-end",
+					icon: "success",
+					title: "Your work has been saved",
+					showConfirmButton: false,
+					timer: 1000
+				});
+                navigate('/')
+			}, (error) => {
+				console.log(error.text);
+			});
+	};
     // console.log(loadFoods);
     return (
         <div>
@@ -77,20 +98,25 @@ const Home = () => {
                     </div>
                     <img src="https://i.ibb.co/rxKRGxg/talk.jpg" alt="" className="px-6" />
                 </div>
-                <form className="space-y-6 pt-6">
+
+
+
+
+
+                <form className="space-y-6 pt-6" ref={form} onSubmit={sendEmail}>
                     <div>
                         <label className="text-sm">Full name</label>
-                        <input id="name" type="text" placeholder="" className="w-full p-3 rounded bg-gray-800" />
+                        <input id="name" type="text" name="user_name" placeholder="" className="w-full p-3 rounded bg-gray-800" />
                     </div>
                     <div>
                         <label className="text-sm">Email</label>
-                        <input id="email" type="email" className="w-full p-3 rounded bg-gray-800" />
+                        <input id="email" type="email" name="user_email" className="w-full p-3 rounded bg-gray-800" />
                     </div>
                     <div>
                         <label className="text-sm">Message</label>
-                        <textarea id="message" rows="3" className="w-full p-3 text-white rounded bg-gray-800"></textarea>
+                        <textarea name="message" id="message" rows="3" className="w-full p-3 text-white rounded bg-gray-800"></textarea>
                     </div>
-                    <button type="submit" className="w-full p-3 text-sm font-bold tracki uppercase rounded hover:bg-green-400 bg-green-800 text-white">Send Message</button>
+                    <button type="submit" value="Send" className="w-full p-3 text-sm font-bold tracki uppercase rounded hover:bg-green-400 bg-green-800 text-white">Send Message</button>
                 </form>
             </div>
         </div>
