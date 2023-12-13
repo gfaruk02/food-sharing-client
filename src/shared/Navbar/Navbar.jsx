@@ -106,6 +106,21 @@ const Navbar = () => {
         </NavLink>
       </li>
 
+      <li className=" font-semibold text-base">
+        <NavLink
+          to="/blog"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "bold",
+              color: isPending ? "white" : "",
+              backgroundColor: isActive ? "green" : "",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+        >
+          Blog
+        </NavLink>
+      </li>
 
     </>
 

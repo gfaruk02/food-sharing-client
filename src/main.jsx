@@ -21,6 +21,8 @@ import ManageFood from './pages/ManageFood/ManageFood';
 import UpdateFood from './pages/ManageFood/UpdateFood';
 import ManageSingleFood from './pages/ManageSingleFood/ManageSingleFood';
 import MyFoodRequest from './pages/MyFoodRequest/MyFoodRequest';
+import Blog from './pages/Blog/Blog';
+import AddBlogPost from './pages/Blog/AddBlogPost';
 
 
 const router = createBrowserRouter([
@@ -70,6 +72,15 @@ const router = createBrowserRouter([
       {
         path: '/donate',
         element: <PrivateRoute><Donate></Donate></PrivateRoute>
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>,
+        loader: () => fetch('https://assignment-11-7-food-sharing-server.vercel.app/blog')
+      },
+      {
+        path: '/addblog',
+        element:<AddBlogPost></AddBlogPost>
       },
       {
         path: '/login',

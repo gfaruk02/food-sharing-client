@@ -1,0 +1,62 @@
+[
+    {
+        "date": "1-11-2023",
+        "userName": "Humaira Faiza",
+        "userEmail": "faiza@gmail.com",
+        "userImage": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "title": "Fresh Produce Donation",
+        "text": "I have surplus vegetables from my garden that I'd love to share with the community. Anyone interested?",
+        "image": "https://i.ibb.co/K2K8Z3B/f1.jpg",
+        "readingTime": "10 mins"
+    },
+    {
+        "date": "11-11-2023",
+        "userName": "Alex Johnson",
+        "userEmail": "alex.johnson@example.com",
+        "userImage": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "title": "Canned Goods Collection",
+        "text": "I've got some extra canned goods that I would like to donate to those in need. Let me know if you could use them!",
+        "image": "https://i.ibb.co/NrDKF5d/f2.jpg",
+        "readingTime": "7 mins"
+    },
+    {
+        "date": "15-11-2023",
+        "userName": "Maria Garcia",
+        "userEmail": "maria.garcia@example.com",
+        "userImage": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "title": "Bakery Surplus",
+        "text": "I run a bakery and have surplus bread and pastries. Happy to share them with anyone who needs them.",
+        "image": "https://i.ibb.co/30xCWRg/f3.jpg",
+        "readingTime": "5 mins"
+    },
+    {
+        "date": "18-11-2023",
+        "userName": "Humaira Faiza",
+        "userEmail": "john.doe@example.com",
+        "userImage": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "title": "Community Garden Harvest",
+        "text": "Our community garden had a bountiful harvest! We have fresh fruits and vegetables available for pickup.",
+        "image": "https://i.ibb.co/G79BmzC/f4.jpg",
+        "readingTime": "8 mins"
+    },
+    {
+        "date": "20-11-2023",
+        "userName": "Sara Miller",
+        "userEmail": "sara.miller@example.com",
+        "userImage": "https://i.ibb.co/rGMZk2n/zara2.jpg",
+        "title": "Surplus Meal Packages",
+        "text": "I have surplus meal packages that I prepared for a party. Would be happy to donate them to a shelter or anyone in need.",
+        "image": "https://i.ibb.co/KrkxpcZ/f5.jpg",
+        "readingTime": "6 mins"
+    },
+    {
+        "date": "1-12-2023",
+        "userName": "Humaira Faiza",
+        "userEmail": "robert.brown@example.com",
+        "userImage": "https://i.ibb.co/7ND6zj7/nk2.jpg",
+        "title": "Farm Fresh Eggs Available",
+        "text": "Our farm has an abundance of fresh eggs. Let me know if you'd like to pick some up!",
+        "image": "https://i.ibb.co/j4dxf0V/f6.jpg",
+        "readingTime": "4 mins"
+    }
+]
